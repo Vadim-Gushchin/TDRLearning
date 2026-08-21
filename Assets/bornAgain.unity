@@ -1346,6 +1346,7 @@ GameObject:
   - component: {fileID: 1590207012}
   - component: {fileID: 1590207013}
   - component: {fileID: 1590207014}
+  - component: {fileID: 1590207015}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1362,7 +1363,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1590207008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3352257a42e2d39418807ef054830e10, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1de3b73c6ddd642a709c5834f58f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMoving
   movingSpeed: 5
@@ -1493,6 +1494,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7420044, y: 1.5303241}
   m_EdgeRadius: 0
+--- !u!114 &1590207015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590207008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8043a40eedaf64fbd6b60fdea71a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PunchScript
+  _punchForce: 2
+  _punchDurationMax: 0.2
 --- !u!1 &1598483059
 GameObject:
   m_ObjectHideFlags: 0

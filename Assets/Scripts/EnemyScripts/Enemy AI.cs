@@ -110,7 +110,7 @@ public class EnemyAI : MonoBehaviour
 
     private void CheckCurrentState()
     {
-        float distanseToPLayer = Vector3.Distance(transform.position, PlayerMoving.Instance.transform.position);
+        float distanseToPLayer = Vector3.Distance(transform.position, Player.Instance.transform.position);
         State newState = State.Roaming;
 
 
@@ -160,7 +160,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasingTarget()
     {
-        _navMeshAgent.SetDestination(PlayerMoving.Instance.transform.position);
+        _navMeshAgent.SetDestination(Player.Instance.transform.position);
     }
 
     private void Roaming()
@@ -177,7 +177,7 @@ public class EnemyAI : MonoBehaviour
             if (IsRunning)
                 ChangeFacingDirection(_lastPostition, transform.position);
             else if (_currentState == State.Attacking)
-                ChangeFacingDirection(transform.position, PlayerMoving.Instance.transform.position);
+                ChangeFacingDirection(transform.position, Player.Instance.transform.position);
 
             _lastPostition = transform.position;
             _nextCheckDirectionTime = Time.time + _checkDirectionDuration;

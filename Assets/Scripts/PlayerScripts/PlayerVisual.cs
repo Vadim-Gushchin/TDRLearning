@@ -14,14 +14,14 @@ public class PlayerVisual : MonoBehaviour
     }
     private void Update()
     {
-        m_animator.SetBool(IS_RUNNING, PlayerMoving.Instance.IsRunning());
+        m_animator.SetBool(IS_RUNNING, Player.Instance.IsRunning());
         AdjustPlyaerFacingDirection();
     }
 
     private void AdjustPlyaerFacingDirection()
     {
         Vector3 mousePos = GameInput.Instance.GetMousePosition();
-        Vector3 playerPos = PlayerMoving.Instance.GetPlayerScreenPosition();
+        Vector3 playerPos = Player.Instance.GetPlayerScreenPosition();
 
         if (mousePos.x < playerPos.x)
             m_spriteRenderer.flipX = true;

@@ -14,6 +14,7 @@ public class EnemyEntity : MonoBehaviour
     private PolygonCollider2D _polygonCollider2D;
     private BoxCollider2D _boxCollider2D;   
     private EnemyAI _enemyAI;
+    private PunchScript _punchScript;
 
     public event EventHandler OnSkeletonDead;
     public event EventHandler OnGotDamage;
@@ -22,7 +23,9 @@ public class EnemyEntity : MonoBehaviour
     {
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
-        _enemyAI = GetComponent<EnemyAI>(); 
+        _enemyAI = GetComponent<EnemyAI>();
+        _punchScript = GetComponent<PunchScript>();
+
     }
 
     private void Start()
@@ -35,14 +38,12 @@ public class EnemyEntity : MonoBehaviour
         DetectDeath();
     }
 
-  
-
     public void TakeDamage(int damage)
     {
         OnGotDamage?.Invoke(this,EventArgs.Empty);
         _currentHealth -= damage;
-
     }
+
     public void PolygonColliderTurnOff()
     {
         _polygonCollider2D.enabled = false;
@@ -52,9 +53,10 @@ public class EnemyEntity : MonoBehaviour
         _polygonCollider2D.enabled = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-
+        if(collision.transform.TryGetComponent(out Player player))
+            player.TakeDamage(transform,_enemySO.dmageAmount);
     }
     private void DetectDeath()
     {
