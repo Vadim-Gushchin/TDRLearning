@@ -16,14 +16,15 @@ public class FlashBlink : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _originalMaterial = _spriteRenderer.material;
+    }
 
-
-        if(_damagebleObject is Player)
+    private void Start()
+    {
+        if (_damagebleObject is Player)
         {
             ((Player)_damagebleObject).OnPlayerTakeDamage += FlashBlink_OnPlayerTakeDamage;
             ((Player)_damagebleObject).OnPlayerDeath += FlashBlink_OnPlayerDeath;
         }
-
     }
 
     private void FlashBlink_OnPlayerDeath(object sender, System.EventArgs e)
@@ -60,6 +61,11 @@ public class FlashBlink : MonoBehaviour
     {
         SetDefoultMaterial();
         _isBlinking = false;
+    }
+    private void OnDestroy()
+    {
+        ((Player)_damagebleObject).OnPlayerDeath -= FlashBlink_OnPlayerDeath; 
+        ((Player)_damagebleObject).OnPlayerTakeDamage -= FlashBlink_OnPlayerTakeDamage;
     }
 }
 

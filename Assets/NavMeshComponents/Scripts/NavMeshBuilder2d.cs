@@ -112,11 +112,10 @@ namespace NavMeshPlus.Extensions
                 // TODO: dispose managed state (managed objects).
                 foreach (var item in spriteMeshMap)
                 {
-#if UNITY_EDITOR
-                    Object.DestroyImmediate(item.Value);
-#else 
-                    Object.Destroy(item.Value);
-#endif
+                    if (!UnityEngine.Application.isPlaying)
+                        Object.DestroyImmediate(item.Value);
+                    else
+                        Object.Destroy(item.Value);
                 }
                 foreach (var item in coliderMeshMap)
                 {

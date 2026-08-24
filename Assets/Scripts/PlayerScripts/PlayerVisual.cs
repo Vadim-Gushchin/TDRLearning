@@ -44,4 +44,9 @@ public class PlayerVisual : MonoBehaviour
             m_spriteRenderer.flipX = false;
     }
 
+    private void OnDestroy()
+    {
+        Player.Instance.OnPlayerDeath -= Instance_OnPlayerDeath;
+    }
+
 }
