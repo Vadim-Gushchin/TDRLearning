@@ -124,6 +124,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5446086816139067471, guid: 5f5ffc8bb019ed54481c1c336085268d, type: 3}
   m_PrefabInstance: {fileID: 1175457545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &101805514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5978058617561694345, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+  m_PrefabInstance: {fileID: 995896902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &115589512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +420,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -492,12 +498,12 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 15.086068
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
   m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 21.946, y: 16.002}
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -507,9 +513,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34
+  field of view: 70
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -535,11 +541,25 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ffe614dbb65164c8e849fa45c016b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovementCamera
+  _playerTransform: {fileID: 1590207011}
+  _offset: {x: 0, y: 0, z: -10}
 --- !u!4 &524570732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5446086816139067471, guid: 5f5ffc8bb019ed54481c1c336085268d, type: 3}
@@ -662,6 +682,7 @@ GameObject:
   - component: {fileID: 641656772}
   - component: {fileID: 641656773}
   - component: {fileID: 641656774}
+  - component: {fileID: 641656775}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -778,6 +799,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
   m_BlendShapeWeights: []
+--- !u!114 &641656775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641656770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01926d6ec3ecd8c4eb3a8b5cc8b42726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashBlink
+  _damagebleObject: {fileID: 1590207009}
+  _blinkMaterial: {fileID: 2100000, guid: b78ba927e516af84897810768571d824, type: 2}
+  _blinkDuration: 0.12
 --- !u!4 &654734045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5446086816139067471, guid: 5f5ffc8bb019ed54481c1c336085268d, type: 3}
@@ -857,6 +893,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1685220965902230890, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5651281913180996504, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -922,8 +962,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7646908677264307085, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      propertyPath: _attackDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646908677264307085, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
       propertyPath: _isAttackingEnemy
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885325331597422328, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7096932
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885325331597422328, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.615796
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885325331597422328, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.18019593
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885325331597422328, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.771074
       objectReference: {fileID: 0}
     - target: {fileID: 8885325331597422328, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
       propertyPath: m_IsTrigger
@@ -936,7 +996,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5978058617561694345, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1183003854}
   m_SourcePrefab: {fileID: 100100000, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
 --- !u!4 &995896903 stripped
 Transform:
@@ -1198,12 +1261,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7585827197975845131, guid: 961a4822c9cbb8e4cbef99b4ba9fed8b, type: 3}
   m_PrefabInstance: {fileID: 995896902}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 101805514}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077622185553c6744a7e90e3ba8cd44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyEntity
+--- !u!114 &1183003854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101805514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8043a40eedaf64fbd6b60fdea71a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PunchScript
+  _punchForce: 5
+  _punchDurationMax: 1
 --- !u!1 &1327394714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8609488270911527762, guid: dc75681c78206784faf805d93985dd86, type: 3}
@@ -1342,10 +1419,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590207011}
-  - component: {fileID: 1590207009}
   - component: {fileID: 1590207012}
   - component: {fileID: 1590207013}
   - component: {fileID: 1590207014}
+  - component: {fileID: 1590207009}
   - component: {fileID: 1590207015}
   m_Layer: 0
   m_Name: Player
@@ -1366,7 +1443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1de3b73c6ddd642a709c5834f58f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMoving
-  movingSpeed: 5
+  _movingSpeed: 5
+  _maxHealth: 100
+  _damageRecoveryTime: 0.5
 --- !u!4 &1590207011
 Transform:
   m_ObjectHideFlags: 0
@@ -1596,7 +1675,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 15, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2111,6 +2190,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -958775198, guid: 48a5f20a3f06cd0409394dd43eeca28a, type: 3}
+    - target: {fileID: 5049833320805384850, guid: dc75681c78206784faf805d93985dd86, type: 3}
+      propertyPath: _sword
+      value: 
+      objectReference: {fileID: 1909143458}
     - target: {fileID: 8609488270911527762, guid: dc75681c78206784faf805d93985dd86, type: 3}
       propertyPath: m_Name
       value: Sword

@@ -37,5 +37,9 @@ public class GameInput : MonoBehaviour
         return mousePos;
     }
 
+    public void DisableMovement()
+    {
+        playerInputActions.Disable();
+    }
 
 }

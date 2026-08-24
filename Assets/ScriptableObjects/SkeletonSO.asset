@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8037a2375fc3a4b449a7f666a3006256, type: 3}
   m_Name: SkeletonSO
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
+  enemyID: 0
   enemyName: Skeleton
   enemyHealth: 50
-  dmageAmount: 2
+  dmageAmount: 25

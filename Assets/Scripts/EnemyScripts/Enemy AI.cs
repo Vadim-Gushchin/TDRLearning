@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool IsRunning => _navMeshAgent.velocity != Vector3.zero;
     public float RoamingAnimationSpeed => _navMeshAgent.speed / _roamingSpeed;
-   
+
 
     private enum State
     {
@@ -104,7 +104,6 @@ public class EnemyAI : MonoBehaviour
             default:
             case State.Idle:
                 break;
-
         }
     }
 
@@ -114,18 +113,16 @@ public class EnemyAI : MonoBehaviour
         State newState = State.Roaming;
 
 
-
         if (_isChasingEnemy)
-        {
             if (distanseToPLayer <= _chasingDistance)
                 newState = State.Chasing;
-        }
 
         if (_isAttackingEnemy)
-        {
             if (distanseToPLayer <= _attackDistance)
+                if(Player.Instance.IsAlive)
                 newState = State.Attacking;
-        }
+        else newState = State.Roaming;
+
 
         if (newState != _currentState)
         {
@@ -134,16 +131,16 @@ public class EnemyAI : MonoBehaviour
                 _navMeshAgent.ResetPath();
                 _navMeshAgent.speed = _chasingSpeed;
             }
+
             else if (newState == State.Roaming)
             {
                 _roamingTimeActual = 1f;
                 _navMeshAgent.speed = _roamingSpeed;
             }
+
             else if (newState == State.Attacking)
-            {
                 _navMeshAgent.ResetPath();
 
-            }
             _currentState = newState;
         }
     }
@@ -197,4 +194,6 @@ public class EnemyAI : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
     }
+
+
 }
