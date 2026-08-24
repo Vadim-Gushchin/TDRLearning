@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 [SelectionBase]
 public class Sword : MonoBehaviour
 {
-    [SerializeField] private int _swordDamage = 5;
+    [SerializeField] private int swordDamage = 5;
 
     public event EventHandler OnSwordSwing;
 
@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.TryGetComponent(out EnemyEntity enemyEntity))
-            enemyEntity.TakeDamage(_swordDamage);
+            enemyEntity.TakeDamage(swordDamage);
     }
 
     public void AttackColliderTurner()

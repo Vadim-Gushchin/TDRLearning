@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PunchScript : MonoBehaviour
 {
-    [SerializeField] private float _punchForce = 2f;
-    [SerializeField] private float _punchDurationMax = 0.2f;
+    [SerializeField] private float punchForce = 2f;
+    [SerializeField] private float punchDurationMax = 0.2f;
 
     private float _punchDurationTimer;
     private Rigidbody2D rb;
@@ -27,8 +27,8 @@ public class PunchScript : MonoBehaviour
     public void GetPunch(Transform damageSource)
     {
         IsGotPunch= true;
-        _punchDurationTimer = _punchDurationMax;
-        Vector2 difference = (transform.position - damageSource.position).normalized *_punchForce/rb.mass;
+        _punchDurationTimer = punchDurationMax;
+        Vector2 difference = (transform.position - damageSource.position).normalized *punchForce/rb.mass;
         rb.AddForce(difference, ForceMode2D.Impulse);
     }
 

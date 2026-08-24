@@ -65,7 +65,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1871cebe9d10a2545b43073b98d5ee33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnviromentDestroyVisual
-  _eviromentDestroy: {fileID: 906778617830389483}
-  _bushDeathVFXPrefab: {fileID: 6550167614692829057}
+  eviromentDestroy: {fileID: 906778617830389483}
+  bushDeathVFXPrefab: {fileID: 6550167614692829057}
 --- !u!1001 &2766351622964542235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -217,6 +217,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4970702122650004315}
     m_Modifications:
+    - target: {fileID: 130321712672260379, guid: 849674d459f7bfb4696ad5623b8e6872, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 130321712672260379, guid: 849674d459f7bfb4696ad5623b8e6872, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3926485772492157866, guid: 849674d459f7bfb4696ad5623b8e6872, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

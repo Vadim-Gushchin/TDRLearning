@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1685220965902230890}
   - component: {fileID: 7646908677264307085}
   - component: {fileID: 7585827197975845131}
+  - component: {fileID: 7713408557035598327}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -72,7 +73,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.17234439, y: 0.80247927}
+  m_Offset: {x: 0.18019593, y: 0.771074}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -82,7 +83,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.91382754, y: 1.6786065}
+  m_Size: {x: 0.7096932, y: 1.615796}
   m_EdgeRadius: 0
 --- !u!50 &5497032785576837704
 Rigidbody2D:
@@ -163,7 +164,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -211,9 +212,9 @@ MonoBehaviour:
   _isChasingEnemy: 1
   _chasingDistance: 5
   _chasingSpeedMultiplayer: 2
-  _isAttackingEnemy: 0
+  _isAttackingEnemy: 1
   _attackDistance: 2
-  _attackRate: 2
+  _attackRate: 1
 --- !u!114 &7585827197975845131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +227,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077622185553c6744a7e90e3ba8cd44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyEntity
-  _maxHealth: 50
+  enemySO: {fileID: 11400000, guid: 9bb048f47cf418d499c115d1da775999, type: 2}
+--- !u!114 &7713408557035598327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978058617561694345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8043a40eedaf64fbd6b60fdea71a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PunchScript
+  punchForce: 2
+  punchDurationMax: 0.2
 --- !u!1 &7708128781673542537
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +418,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1555686772, guid: 158011f81ce4bb244842c2b1cb6e12c4, type: 3}
+  m_Sprite: {fileID: 277211835, guid: 7a157f886fb3b7d4ebc5f4df5b0fd501, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -449,4 +464,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonVisual
   _enemyAI: {fileID: 7646908677264307085}
-  _enemyEntity: {fileID: 0}
+  _enemyEntity: {fileID: 7585827197975845131}
+  _enemyShadow: {fileID: 7708128781673542537}

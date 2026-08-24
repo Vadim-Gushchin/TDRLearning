@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class MovementCamera : MonoBehaviour
 {
-    [SerializeField] private Transform _playerTransform;
+    [SerializeField] private Transform playerTransform;
 
     public Vector3 _offset;
 
     private void Update()
     {
-        transform.position = _playerTransform.position + _offset;
+        transform.position = playerTransform.position + _offset;
     }
 }

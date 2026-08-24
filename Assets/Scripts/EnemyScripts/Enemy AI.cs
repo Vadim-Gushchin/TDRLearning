@@ -1,10 +1,7 @@
-using Unity.VisualScripting;
+using System;
+using TDRL.Utils;
 using UnityEngine;
 using UnityEngine.AI;
-using TDRL.Utils;
-using UnityEngine.InputSystem.XR.Haptics;
-using TMPro;
-using System;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -119,9 +116,7 @@ public class EnemyAI : MonoBehaviour
 
         if (_isAttackingEnemy)
             if (distanseToPLayer <= _attackDistance)
-                if(Player.Instance.IsAlive)
-                newState = State.Attacking;
-        else newState = State.Roaming;
+                newState = Player.Instance.IsAlive ? State.Attacking : State.Roaming;
 
 
         if (newState != _currentState)

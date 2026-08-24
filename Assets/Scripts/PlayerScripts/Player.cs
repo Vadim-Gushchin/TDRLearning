@@ -12,9 +12,9 @@ public class Player : MonoBehaviour
     public event EventHandler OnPlayerTakeDamage;
 
 
-    [SerializeField] private float _movingSpeed = 5f;
-    [SerializeField] private int _maxHealth = 100;
-    [SerializeField] private float _damageRecoveryTime = 0.5f;
+    [SerializeField] private float movingSpeed = 5f;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private float damageRecoveryTime = 0.5f;
 
 
     Vector2 inputVector;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameInput.Instance.OnPlayerAttack += GameInput_OnPlayerAttack;
-        _currentHealth = _maxHealth;
+        _currentHealth = maxHealth;
 
     }
     private void Update()
@@ -82,13 +82,13 @@ public class Player : MonoBehaviour
     {
         if (_isAlive)
         {
-            yield return new WaitForSeconds(_damageRecoveryTime);
+            yield return new WaitForSeconds(damageRecoveryTime);
             _canTakeDamage = true;
         }
     }
     private void HandleMovement()
     {
-        rigidBody.MovePosition(rigidBody.position + inputVector * (_movingSpeed * Time.fixedDeltaTime));
+        rigidBody.MovePosition(rigidBody.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
         if (Mathf.Abs(inputVector.x) > _minMovingSpeed || Mathf.Abs(inputVector.y) > _minMovingSpeed)
             _isRuning = true;
         else

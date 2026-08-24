@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class FlashBlink : MonoBehaviour
 {
-    [SerializeField] private MonoBehaviour _damagebleObject;
-    [SerializeField] private Material _blinkMaterial;
-    [SerializeField] private float _blinkDuration= 0.15f;
+    [SerializeField] private MonoBehaviour damagebleObject;
+    [SerializeField] private Material blinkMaterial;
+    [SerializeField] private float blinkDuration = 0.15f;
 
 
     private float _blinkTimer;
@@ -20,10 +20,10 @@ public class FlashBlink : MonoBehaviour
 
     private void Start()
     {
-        if (_damagebleObject is Player)
+        if (damagebleObject is Player player)
         {
-            ((Player)_damagebleObject).OnPlayerTakeDamage += FlashBlink_OnPlayerTakeDamage;
-            ((Player)_damagebleObject).OnPlayerDeath += FlashBlink_OnPlayerDeath;
+            player.OnPlayerTakeDamage += FlashBlink_OnPlayerTakeDamage;
+            player.OnPlayerDeath += FlashBlink_OnPlayerDeath;
         }
     }
 
@@ -34,7 +34,7 @@ public class FlashBlink : MonoBehaviour
 
     private void Update()
     {
-        if(_isBlinking)
+        if (_isBlinking)
         {
             _blinkTimer -= Time.deltaTime;
             if (_blinkTimer <= 0)
@@ -49,8 +49,8 @@ public class FlashBlink : MonoBehaviour
 
     private void SetBlinkltMaterial()
     {
-        _blinkTimer = _blinkDuration;
-        _spriteRenderer.material = _blinkMaterial;
+        _blinkTimer = blinkDuration;
+        _spriteRenderer.material = blinkMaterial;
     }
 
     private void SetDefoultMaterial()
@@ -64,8 +64,11 @@ public class FlashBlink : MonoBehaviour
     }
     private void OnDestroy()
     {
-        ((Player)_damagebleObject).OnPlayerDeath -= FlashBlink_OnPlayerDeath; 
-        ((Player)_damagebleObject).OnPlayerTakeDamage -= FlashBlink_OnPlayerTakeDamage;
+        if (damagebleObject is Player player)
+        {
+            player.OnPlayerDeath -= FlashBlink_OnPlayerDeath;
+            player.OnPlayerTakeDamage -= FlashBlink_OnPlayerTakeDamage;
+        }
     }
 }
 

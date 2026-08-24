@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnviromentDestroy : MonoBehaviour
 {
     [SerializeField] private EnviromentSO enviromentSO;
-    [SerializeField] private  SelfDestroyVFX _selfDestroyVFX;
 
     private int _curentHealth;
     public event EventHandler OnEnviromentGotHit;
