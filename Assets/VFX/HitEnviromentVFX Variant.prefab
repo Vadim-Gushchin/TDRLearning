@@ -53,6 +53,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: lengthInSec
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -61,16 +65,48 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: ShapeModule.type
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: InheritVelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.2627451
+      value: 0.34234536
       objectReference: {fileID: 0}
     - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.3529412
+      value: 0.4433962
       objectReference: {fileID: 0}
     - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.121568635
+      value: 0.17777678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].time
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405189016978256274, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4739035400961823039, guid: 87d2468341ad0454c8dd507ad05c05ba, type: 3}
