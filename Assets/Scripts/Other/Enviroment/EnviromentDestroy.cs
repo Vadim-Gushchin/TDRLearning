@@ -7,11 +7,17 @@ public class EnviromentDestroy : MonoBehaviour
 {
     [SerializeField] private EnviromentSO enviromentSO;
 
+
     private int _curentHealth;
     public event EventHandler OnEnviromentGotHit;
 
     private void Start()
     {
+        if (enviromentSO == null)
+        {
+            Debug.LogError("EnviromentSO is not assigned in the Inspector!", gameObject);
+            return;
+        }
         _curentHealth = enviromentSO.enviromentHealth;
     }
 
@@ -23,9 +29,15 @@ public class EnviromentDestroy : MonoBehaviour
             _curentHealth--;
             if (_curentHealth < 0)
             {
-                Destroy(gameObject);    
-                NavMeshSurfaceManagment.Instance.RebakeNavMeshSurface();
-                
+                Destroy(gameObject);
+                if (NavMeshSurfaceManagment.Instance != null)
+                {
+                    NavMeshSurfaceManagment.Instance.RebakeNavMeshSurface();
+                }
+                else
+                {
+                    Debug.LogWarning("NavMeshSurfaceManagment.Instance is null!", gameObject);
+                }
             }
         }
     }
