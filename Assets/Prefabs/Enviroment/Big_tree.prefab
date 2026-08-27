@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 157135881403127720}
   - component: {fileID: 4855791335381621902}
   - component: {fileID: 6925164682949695018}
+  - component: {fileID: 4948830749719648534}
   - component: {fileID: 6749723826147910404}
+  - component: {fileID: -1087610982631521825}
   m_Layer: 0
   m_Name: Big_tree
   m_TagString: Untagged
@@ -128,8 +130,45 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03293189, y: 0.32058778}
-  m_Size: {x: 1.8355494, y: 1.1673921}
+  m_Offset: {x: -0.057084586, y: -0.16238286}
+  m_Size: {x: 1.7872605, y: 0.56368846}
+  m_Direction: 1
+--- !u!70 &4948830749719648534
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411578862363678483}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.000000039766874, y: 1.333589}
+  m_Size: {x: 3.000001, y: 2.3885524}
   m_Direction: 1
 --- !u!114 &6749723826147910404
 MonoBehaviour:
@@ -147,3 +186,17 @@ MonoBehaviour:
   m_Center: {x: 0, y: 0.5, z: 0}
   m_Area: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &-1087610982631521825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411578862363678483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b407ef66ee9414485be5ce94361e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TransparansyDirection
+  transparansyAmount: 0.8
+  fadeTime: 0.5
