@@ -1,4 +1,22 @@
-It's a leraning project. 
-Generally i copy this game https://www.youtube.com/@TinyGamesUnity. Sometimes change some code and behavior of gameobjects.
-Here i got Unity basics, like MonoBehavior, GameObjects, Transform, Animator, Colliders and Rigidbody and liltle bit of Corutines, StateMachine. Also Cinecamera and NavMesh.
-And got understandig of C# Events(what is this, how to create, how subscribe and unsubscribe). Sigleton(what is this, how to create, how to use). Also properties and delegates.
+Project Overview
+This is a learning project. I started by copying an existing Unity game and then iteratively modified its code and gameplay behavior of various game objects.
+Reference https://www.youtube.com/@TinyGamesUnity
+
+What I Learned / Implemented
+Unity Fundamentals
+MonoBehaviour
+GameObject and Transform
+Animator
+Colliders and Rigidbody
+Gameplay Systems
+Coroutines (basic usage for timed/asynchronous logic)
+State machine (basic implementation and usage)
+Camera & Navigation
+Cinemachine camera
+NavMesh
+C# Concepts
+Events: how to create them and safely subscribe/unsubscribe
+Singleton pattern: how to implement and use it
+Delegates and properties in gameplay logic
+Summary
+Overall, this project helped me consolidate core Unity systems and strengthen my understanding of reusable gameplay code patterns and C# language features.
